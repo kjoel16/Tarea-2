@@ -1,0 +1,5 @@
+A          R MENU
+A                                      MENUBAR MENUNAV
+A                                      MENUITEM('Opción 1') OPTION(OPT1)
+A                                      MENUITEM('Opción 2') OPTION(OPT2)
+A                                      MENUITEM('Salir')    OPTION(EXIT)
