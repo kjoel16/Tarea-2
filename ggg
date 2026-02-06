@@ -1,5 +1,22 @@
-A          R MENU
-A                                      MENUBAR MENUNAV
-A                                      MENUITEM('Opción 1') OPTION(OPT1)
-A                                      MENUITEM('Opción 2') OPTION(OPT2)
-A                                      MENUITEM('Salir')    OPTION(EXIT)
+CREATE OR REPLACE PROCEDURE TDIAZQDD.SP_CONSULTAR_CUENTA (
+    IN  P_CUENTA CHAR(20),
+    OUT P_NOMBRE VARCHAR(60),
+    OUT P_SALDO DECIMAL(12,2),
+    OUT P_ESTADO CHAR(1),
+    OUT P_TIPO VARCHAR(20)
+)
+LANGUAGE SQL
+BEGIN
+
+    SELECT TNOMBRE,
+           TSALDO,
+           TESTADO,
+           TTIPO
+    INTO   P_NOMBRE,
+           P_SALDO,
+           P_ESTADO,
+           P_TIPO
+    FROM TDIAZQDD.TAP002
+    WHERE TACCNT = P_CUENTA;
+
+END
